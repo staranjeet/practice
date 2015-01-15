@@ -1,35 +1,39 @@
 
 /*
+2015-01-15 20:22
 practice
-JUN 12
+JAN 15
 */
 #include <bits/stdc++.h>
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
 using namespace std;
 
-typedef long long ll;
+typedef long long int ll;
 
 #define FOR(i,n) for(int i = 0; i < n; i++)
 #define FORS(i,a,n) for(int i = a; i < n; i++)
+#define RDARR(a,n) FOR(i,n) cin>>a[i];
+#define SOLVE() int t;cin>>t;FOR(tc,t) solve();
+#define PB push_back
 
+void solve(){
+
+	int n;
+	cin>>n;
+	int m=sqrt(n);
+	for(int i=m;i>0;i--)
+	{
+		if(n%i==0)
+			{
+				cout<<abs(i-n/i)<<endl;
+				break;
+			}
+	}
+}
 
 int main(){ _
-	int t;
-	cin>>t;
-	while(t--){
-	
-		int n,m,min=100000000,diff;
-		cin>>n;
-		m=sqrt(n);
-		for(int i=m;i>=1;i--){
-			if(n%i==0){
-			min=abs(i-n/i);
-			break;
-			//if(diff<min)min=diff;	
-			}
-		}
-		cout<<min<<"\n";
-	}
+
+	SOLVE()
 
 	return 0;
 }
