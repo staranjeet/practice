@@ -20,8 +20,10 @@ void solve(){
 
 	ll n,k;
 	cin>>n>>k;
-	if(k==0)
-		cout<<n<<" 0\n";
+	if(!n && !k)
+		cout<<"0 0\n";
+	else if(!k)
+		cout<<"0 "<<n<<endl;
 	else
 		cout<<n/k<<" "<<n%k<<endl;
 }
