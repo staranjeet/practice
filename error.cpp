@@ -1,33 +1,37 @@
 
 /*
+2015-01-15 20:34
 practice
-JAN 14
+JAN 15
 */
 #include <bits/stdc++.h>
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
 using namespace std;
 
-typedef long long ll;
+typedef long long int ll;
 
 #define FOR(i,n) for(int i = 0; i < n; i++)
 #define FORS(i,a,n) for(int i = a; i < n; i++)
+#define RDARR(a,n) FOR(i,n) cin>>a[i];
+#define SOLVE() int t;cin>>t;FOR(tc,t) solve();
+#define PB push_back
+#define SIZE 100001
 
+void solve(){
+
+	char s[SIZE];
+	cin>>s;
+	if(strstr(s,"101"))
+		cout<<"Good\n";
+	else if(strstr(s,"010"))
+		cout<<"Good\n";
+	else
+		cout<<"Bad\n";
+}
 
 int main(){ _
-	int t;
-	cin>>t;
-	while(t--){
-	
-		string s;
-		cin>>s;
 
-		int a=s.find("010");
-		int b=s.find("101");
-		if(a==-1 && b==-1)
-			cout << "Bad\n";
-		else
-			cout<<"Good\n";
-	}
+	SOLVE()
 
 	return 0;
 }
