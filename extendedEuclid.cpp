@@ -19,6 +19,24 @@ typedef long long int ll;
 void solve(){
 }
 
+int gcdi(int a, int b)			//iterative implementation
+{
+	while(a!=b){
+		if(a>b)
+			a=a-b;
+		else
+			b=b-a;
+	}
+	return a;
+}
+
+int gcdr(int a , int b){			//recursive implementation
+
+if(b>a)return gcdr(b,a);
+if(b==0)return a;
+else
+	return gcdr(b,a%b);
+}
 int main(){ _
 
 	//SOLVE()
@@ -33,5 +51,7 @@ int main(){ _
 		r=t1-q*t2;t1=t2;t2=r;
 	}
 	cout<<a<<" "<<s2<<" "<<t2<<endl;
+	cout<<gcdi(240,46)<<endl<<gcdr(240,46);
+
 	return 0;
 }
