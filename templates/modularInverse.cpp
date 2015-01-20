@@ -36,7 +36,7 @@ pair<int, pair<int,int> > extendedEuclid(int a,int b){
 }
 
 int modularEuclidInverse(int a, int mod){
-	return extendedEuclid(a,mod).second.first;
+	return (mod + extendedEuclid(a,mod).second.first)%mod;
 }
 
 //using Fermat Little Theorem
@@ -56,6 +56,12 @@ int modularFermatInverse(int a, int mod){
 	return power(a,mod-2,mod);
 }
 
+
+/*
+In case m is not prime, take M= m*a;
+ie
+(a/b)%m = (a%M)/b
+*/
 int main(){ _
 
 /*
@@ -64,7 +70,7 @@ ans = 4
 */
 int a,m;
 cin>>a>>m;
-//cout<<modularEuclidInverse(a,m)<<endl;
+cout<<modularEuclidInverse(a,m)<<endl;
 cout<<modularFermatInverse(a,m)<<endl;
 
 	//SOLVE()
