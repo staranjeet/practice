@@ -62,6 +62,17 @@ In case m is not prime, take M= m*a;
 ie
 (a/b)%m = (a%M)/b
 */
+
+vector<int> computeAllInverse(int mod){
+	int i;
+	vector<int> r(mod);
+	r[0]=1,r[1]=1;
+	for(i=2;i<mod;i++)
+	r[i]=((-mod/i)*r[mod%i])%mod+mod;
+	/*FORS(j,1,mod)
+		cout<<j<<" "<<r[j]<<endl;*/
+	return r;
+}
 int main(){ _
 
 /*
@@ -72,6 +83,12 @@ int a,m;
 cin>>a>>m;
 cout<<modularEuclidInverse(a,m)<<endl;
 cout<<modularFermatInverse(a,m)<<endl;
+vector<int> r = computeAllInverse(11);
+
+//print the inverse modulo 11
+
+FORS(i,1,11)
+	cout<<i<<" "<<r[i]<<endl;
 
 	//SOLVE()
 
