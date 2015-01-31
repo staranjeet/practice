@@ -5,7 +5,7 @@
 JAN 15
 */
 /*
-Graph Tutorial : Using adjacency matrix to represent graph
+Graph Tutorial : Using adjacency matrix to represent undirected graph
 Complexity : O()
 */
 #include <bits/stdc++.h>
