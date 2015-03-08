@@ -3,6 +3,7 @@
 2015-03-07 21:16
 practice
 MAR 15
+SPOJ
 */
 #include <bits/stdc++.h>
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
