@@ -48,10 +48,15 @@ vector<int> factorial(int n){
 void solve(){
 	int n;
 	cin>>n;
+	if(n==0)
+		cout<<"1\n";
+	else{
+		
 	vector<int>a=factorial(n);
 	for(int i=a.size()-1;i>-1;i--)
 		cout<<a[i];
 	cout<<endl;
+	}
 
 }
 
