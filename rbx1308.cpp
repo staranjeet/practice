@@ -2,6 +2,8 @@
 /*
 2015-03-15 11:41
 practice
+good question
+prime
 MAR 15
 */
 #include <bits/stdc++.h>
