@@ -1,8 +1,8 @@
 
 /*
-2015-02-21 01:44
+2015-03-15 11:10
 practice
-FEB 15
+MAR 15
 */
 #include <bits/stdc++.h>
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -16,36 +16,44 @@ typedef long long int ll;
 #define SOLVE() int t;cin>>t;FOR(tc,t) solve();
 #define PB push_back
 
-void solve(){
-
-	int n,a[250];
-	cin>>n;
-	int m=0,temp=n,x,i,j;
+void factorial(int n){
+	int m=0,temp,x;
+	vector<int>a;
+	temp=n;
 	while(temp){
-		a[m++]=temp%10;
+		a.PB(temp%10);
+		m++;
 		temp/=10;
 	}
-	for(i=1;i<n;i++){
+	FORS(i,1,n){
 		temp=0;
-		for(j=0;j<m;j++){
+		FOR(j,m){
 			x=a[j]*i+temp;
 			a[j]=x%10;
 			temp=x/10;
 		}
 		while(temp){
-			a[m++]=temp%10;
+			a.PB(temp%10);
 			temp/=10;
+			m++;
 		}
 	}
-	for(i=m-1;i>=0;i--)
+	for(int i=m-1;i>-1;i--)
 		cout<<a[i];
 	cout<<endl;
+}
 
+
+void solve(){
+	int n;
+	cin>>n;
+	factorial(n);
 }
 
 int main(){ _
 
-	SOLVE()
+	//SOLVE()
+	solve();
 
 	return 0;
 }
