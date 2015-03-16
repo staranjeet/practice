@@ -1,8 +1,8 @@
 
 /*
-2015-01-15 14:21
-practice
-JAN 15
+2015-03-17 02:22
+spoj
+MAR 15
 */
 #include <bits/stdc++.h>
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -16,23 +16,32 @@ typedef long long int ll;
 #define SOLVE() int t;cin>>t;FOR(tc,t) solve();
 #define PB push_back
 
+int gcd(int a, int b){
+	/*if(b==0)return */
+	if(b>a)return gcd(b,a);
+	if(b==0)return a;
+	return gcd(b,a%b);
+}
 void solve(){
 
+	int a,m,s=0;
 	string b;
-	int a;
-	cin>>a;
-	cin>>b;
+	cin>>a>>b;
 	if(a==0)
-		cout<<b<<endl;	
+		cout<<b<<"\n";
 	else
-	{
-	int gcd=a;
-	int no=0;
-	FOR(i,b.length()){
-		no=(no*10+(b[i]-48))%a;
+		{
+			
+	FOR(i,b.size()){
+		s=s*10+(b[i]-'0');
+		s=s%a;
 	}
-	cout<<__gcd(no,a)<<endl;
-	}
+	/*if(s==0)
+		cout<<a<<"\n";
+	else*/
+	cout<<gcd(a,s)<<"\n";
+		}
+
 }
 
 int main(){ _
